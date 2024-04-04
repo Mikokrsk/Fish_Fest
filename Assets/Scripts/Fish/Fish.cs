@@ -18,11 +18,11 @@ public class Fish : MonoBehaviour
             var direction = Random.Range(0, 2);
             if (direction == 0)
             {
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                transform.eulerAngles = new Vector3(0, 180f, 0);
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 180f, 0);
+                transform.eulerAngles = new Vector3(0, 0, 0);
             }
 
         }
@@ -35,16 +35,16 @@ public class Fish : MonoBehaviour
         }
         if (transform.position.x <= -_edgeX)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 180f, 0);
         }
         else
         {
             if (transform.position.x >= _edgeX)
             {
-                transform.eulerAngles = new Vector3(0, 180f, 0);
+                transform.eulerAngles = new Vector3(0, 0, 0);
             }
         }
-        transform.Translate(Vector2.right * _speed * Time.deltaTime);
+        transform.Translate(Vector2.left * _speed * Time.deltaTime);
     }
 
     public GameObject CaughtFish()
@@ -53,7 +53,7 @@ public class Fish : MonoBehaviour
         {
             _isMoving = false;
             _isCaucght = true;
-            transform.Rotate(new Vector3(0, 0, 90f));
+            transform.Rotate(new Vector3(0, 0, -90f));
             return this.gameObject;
         }
         return null;

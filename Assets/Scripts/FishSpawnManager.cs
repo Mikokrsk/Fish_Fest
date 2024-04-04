@@ -36,16 +36,9 @@ public class FishSpawnManager : MonoBehaviour
 
     public void SpawnFish(GameObject fishPref)
     {
-        var positionX = Random.Range(-1f, 1f);
+        var positionX = Random.Range(_leftEdge, _rightEdge);
         var positionY = Random.Range(_bottomEdge, _topEdge);
-        if (positionX < 0)
-        {
-            positionX = _leftEdge;
-        }
-        else
-        {
-            positionX = _rightEdge;
-        }
+
         var position = new Vector2(positionX, positionY);
         var fish = Instantiate(fishPref, transform);
         fish.transform.position = position;
