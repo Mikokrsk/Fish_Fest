@@ -5,10 +5,10 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     //   [SerializeField] public int direction = 1;
-    [SerializeField] private int _edgeX = 1;
+    [SerializeField] private int _edgeX = 13;
     [SerializeField] private float _speed = 1;
-    private bool _isMoving;
-    private bool _isCaucght;
+    private bool _isMoving = true;
+    private bool _isCaucght = false;
     [SerializeField] public FishAsset fishAsset;
 
     private void Start()

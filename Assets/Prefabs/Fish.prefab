@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc01738574f8c540acb1fffb175e543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _edgeX: 1
+  _edgeX: 13
   _speed: 2
   fishAsset: {fileID: 11400000, guid: 6f56fe6c558117540a5400113a19109d, type: 2}
 --- !u!61 &4232930904210047455

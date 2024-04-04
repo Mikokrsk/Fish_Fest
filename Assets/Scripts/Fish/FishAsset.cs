@@ -9,7 +9,6 @@ public class FishAsset : ScriptableObject
     public int weight;
     public int cost;
     public Rarity rarity;
-
 }
 public enum Rarity
 {

@@ -14,6 +14,7 @@ public class Hook : MonoBehaviour
     [SerializeField] private float _downEdge;
     [SerializeField] private float _fishingLineLength;
     [SerializeField] private GameObject _fish;
+    [SerializeField] private FishSpawnManager _fishSpawnManager;
     void Start()
     {
         _verticalMoveAction.Enable();
@@ -40,6 +41,7 @@ public class Hook : MonoBehaviour
             if (_fish != null)
             {
                 var fish = _fish.GetComponent<Fish>();
+                _fishSpawnManager.CaughtFish(fish.gameObject);
                 Destroy(_fish);
                 Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
             }
