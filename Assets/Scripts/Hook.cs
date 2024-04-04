@@ -37,6 +37,12 @@ public class Hook : MonoBehaviour
         if (positionY >= _topEdge)
         {
             positionY = _topEdge;
+            if (_fish != null)
+            {
+                var fish = _fish.GetComponent<Fish>();
+                Destroy(_fish);
+                Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
+            }
         }
         if (positionY <= _downEdge)
         {
@@ -48,11 +54,14 @@ public class Hook : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var fish = collision.GetComponent<Fish>();
-        if (fish != null)
+        if (_fish == null)
         {
-            _fish = fish.CaughtFish();
-            Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
+            var fish = collision.GetComponent<Fish>();
+            if (fish != null)
+            {
+                _fish = fish.CaughtFish();
+                Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
+            }
         }
     }
 }

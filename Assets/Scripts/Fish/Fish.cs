@@ -5,25 +5,41 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     //   [SerializeField] public int direction = 1;
-    [SerializeField] public int edgeX = 1;
+    [SerializeField] private int _edgeX = 1;
     [SerializeField] private float _speed = 1;
-    [SerializeField] public bool isMoving;
-    [SerializeField] private bool isCaucght;
+    private bool _isMoving;
+    private bool _isCaucght;
     [SerializeField] public FishAsset fishAsset;
 
+    private void Start()
+    {
+        if (transform.position.x >= -_edgeX && transform.position.x <= _edgeX)
+        {
+            var direction = Random.Range(0, 2);
+            if (direction == 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 180f, 0);
+            }
+
+        }
+    }
     void Update()
     {
-        if (!isMoving)
+        if (!_isMoving)
         {
             return;
         }
-        if (transform.position.x <= -edgeX)
+        if (transform.position.x <= -_edgeX)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else
         {
-            if (transform.position.x >= edgeX)
+            if (transform.position.x >= _edgeX)
             {
                 transform.eulerAngles = new Vector3(0, 180f, 0);
             }
@@ -33,10 +49,10 @@ public class Fish : MonoBehaviour
 
     public GameObject CaughtFish()
     {
-        if (!isCaucght)
+        if (!_isCaucght)
         {
-            isMoving = false;
-            isCaucght = true;
+            _isMoving = false;
+            _isCaucght = true;
             transform.Rotate(new Vector3(0, 0, 90f));
             return this.gameObject;
         }
