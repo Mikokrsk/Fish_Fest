@@ -13,6 +13,7 @@ public class Hook : MonoBehaviour
     [SerializeField] private float _topEdge;
     [SerializeField] private float _downEdge;
     [SerializeField] private float _fishingLineLength;
+    [SerializeField] private GameObject _fish;
     void Start()
     {
         _verticalMoveAction.Enable();
@@ -29,6 +30,10 @@ public class Hook : MonoBehaviour
     private void FixedUpdate()
     {
         var positionY = _rigidbody2d.position.y + _moveDirection * _speed * Time.deltaTime;
+        if (_fish != null)
+        {
+            _fish.transform.position = transform.position;
+        }
         if (positionY >= _topEdge)
         {
             positionY = _topEdge;
@@ -40,5 +45,14 @@ public class Hook : MonoBehaviour
 
         Vector2 movePosition = new Vector2(_ship.transform.position.x, positionY);
         _rigidbody2d.MovePosition(movePosition);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var fish = collision.GetComponent<Fish>();
+        if (fish != null)
+        {
+            _fish = fish.CaughtFish();
+            Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
+        }
     }
 }
