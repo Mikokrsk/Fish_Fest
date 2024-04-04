@@ -19,13 +19,13 @@ public class Fish : MonoBehaviour
         }
         if (transform.position.x <= -edgeX)
         {
-            transform.Rotate(new Vector3(0f, 0f, 0f));
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else
         {
             if (transform.position.x >= edgeX)
             {
-                transform.Rotate(new Vector3(0f, 90f, 0f));
+                transform.eulerAngles = new Vector3(0, 180f, 0);
             }
         }
         transform.Translate(Vector2.right * _speed * Time.deltaTime);
