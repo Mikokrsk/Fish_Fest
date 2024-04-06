@@ -106,7 +106,7 @@ MonoBehaviour:
   _speed: 2
   _isMoving: 1
   _isCaught: 0
-  fishAsset: {fileID: 11400000, guid: 40bbb6878a04c91469dba5d8d6f0e542, type: 2}
+  fishAsset: {fileID: 11400000, guid: 6c021646832f055459e97bd04ad96772, type: 2}
 --- !u!61 &6281641048476582814
 BoxCollider2D:
   m_ObjectHideFlags: 0
