@@ -10,20 +10,20 @@ public class FishSpawnManager : MonoBehaviour
     [SerializeField] private float _rightEdge;
     [SerializeField] private float _bottomEdge;
     [SerializeField] private float _maxNumFish;
-    /*    public static FishSpawnManager Instance { get; private set; }
+    public static FishSpawnManager Instance { get; private set; }
 
-        private void Awake()
+    private void Awake()
+    {
+        if (Instance == null)
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }*/
+            Instance = this;
+            /*                DontDestroyOnLoad(gameObject);*/
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -44,8 +44,9 @@ public class FishSpawnManager : MonoBehaviour
         fish.transform.position = position;
         _fishesList.Add(fish);
     }
-    public void CaughtFish(GameObject fish)
+    public void RemoveFish(GameObject fish)
     {
         _fishesList.Remove(fish);
+        Destroy(fish);
     }
 }

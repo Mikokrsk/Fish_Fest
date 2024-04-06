@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 183780189}
   - component: {fileID: 183780188}
   - component: {fileID: 183780191}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FishUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -644,74 +644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &920675642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 920675645}
-  - component: {fileID: 920675644}
-  - component: {fileID: 920675643}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &920675643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920675642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &920675644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920675642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &920675645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920675642}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921373201
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +658,7 @@ GameObject:
   - component: {fileID: 921373202}
   - component: {fileID: 921373206}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,8 +882,9 @@ MonoBehaviour:
   _topEdge: 0
   _downEdge: -3
   _fishingLineLength: 3
-  _fish: {fileID: 0}
+  fishOnHook: {fileID: 0}
   _fishSpawnManager: {fileID: 1938567584}
+  isMove: 1
 --- !u!1 &1020736174
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +918,7 @@ RectTransform:
   m_Father: {fileID: 1795101683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.177}
+  m_AnchorMax: {x: 1, y: 0.2}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1039,7 +972,7 @@ GameObject:
   - component: {fileID: 1119011876}
   - component: {fileID: 1119011875}
   - component: {fileID: 1119011878}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FishingBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,6 +1069,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Hook
       m_Flags: 0
+    - m_Name: 
+      m_Id: 1a1f7514-d5f9-4633-96eb-1b19f4466d0a
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Hook
+      m_Flags: 0
     m_Flags: 0
   _speed: 350
   _topEdgeFishingBox: 0
@@ -1211,7 +1152,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380690165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.001373291}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1430,12 +1371,12 @@ MonoBehaviour:
       m_Action: Horizontal Move
       m_Flags: 8
     m_Flags: 0
-  _move: {x: 0, y: 0}
   _rigidbody2d: {fileID: 1583464325}
   _speed: 1
   _moveDirection: 0
   _leftEdge: -5.1
   _rightEdge: 3.71
+  isMove: 1
 --- !u!212 &1583464322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1612,8 +1553,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 153833221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.177}
-  m_AnchorMax: {x: 1, y: 0.177}
+  m_AnchorMin: {x: 0, y: 0.2}
+  m_AnchorMax: {x: 1, y: 0.2}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1666,7 +1607,7 @@ GameObject:
   - component: {fileID: 1700367478}
   - component: {fileID: 1700367481}
   - component: {fileID: 1700367480}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FishingBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,7 +1622,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700367477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.001373291}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1829,5 +1770,4 @@ SceneRoots:
   - {fileID: 1583464323}
   - {fileID: 1938567585}
   - {fileID: 666773538}
-  - {fileID: 920675645}
   - {fileID: 1238758663}

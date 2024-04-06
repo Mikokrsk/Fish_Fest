@@ -9,15 +9,26 @@ public class Ship : MonoBehaviour
 {
     [SerializeField] private InputAction _moveAction;
     [SerializeField] private InputAction _horizontalMoveAction;
-    [SerializeField] private Vector2 _move;
-
-    // [SerializeField] private Vector2 _moveDirection = new Vector2(1, 0);
-
     [SerializeField] private Rigidbody2D _rigidbody2d;
     [SerializeField] private float _speed;
     [SerializeField] private float _moveDirection;
     [SerializeField] private float _leftEdge;
     [SerializeField] private float _rightEdge;
+    public bool isMove;
+
+    public static Ship Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(Instance);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -29,11 +40,15 @@ public class Ship : MonoBehaviour
     void Update()
     {
         _moveDirection = _horizontalMoveAction.ReadValue<float>();
-        _move = _moveAction.ReadValue<Vector2>();
     }
 
     void FixedUpdate()
     {
+        if (!isMove)
+        {
+            return;
+        }
+
         var positionX = _rigidbody2d.position.x + _moveDirection * _speed * Time.deltaTime;
         if (positionX <= _leftEdge)
         {

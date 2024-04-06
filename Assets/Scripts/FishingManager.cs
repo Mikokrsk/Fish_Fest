@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class FishingManager : MonoBehaviour
 {
     [SerializeField] private GameObject _fishingUI;
 
+    private Fish _fishOnHook;
     public static FishingManager Instance;
 
     private void Awake()
@@ -22,20 +24,29 @@ public class FishingManager : MonoBehaviour
         }
     }
 
-    public void StartFishing()
+    public void StartFishing(Fish fishOnHook)
     {
+        _fishOnHook = fishOnHook;
+        _fishOnHook.StopMoving();
         _fishingUI.SetActive(true);
+        Ship.Instance.isMove = false;
+        Hook.Instance.isMove = false;
     }
+
     public void StopFishing(bool result)
     {
         _fishingUI.SetActive(false);
+        Ship.Instance.isMove = true;
+        Hook.Instance.isMove = true;
+
         if (result)
         {
-            Debug.Log("Fish " + result);
+            _fishOnHook.CaughtFish();
         }
         else
         {
-            Debug.Log("Fish " + result);
+            FishSpawnManager.Instance.RemoveFish(_fishOnHook.gameObject);
         }
+
     }
 }

@@ -13,8 +13,23 @@ public class Hook : MonoBehaviour
     [SerializeField] private float _topEdge;
     [SerializeField] private float _downEdge;
     [SerializeField] private float _fishingLineLength;
-    [SerializeField] private GameObject _fish;
+    public GameObject fishOnHook;
     [SerializeField] private FishSpawnManager _fishSpawnManager;
+    public bool isMove;
+    public static Hook Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(Instance);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         _verticalMoveAction.Enable();
@@ -25,25 +40,27 @@ public class Hook : MonoBehaviour
     void Update()
     {
         _moveDirection = _verticalMoveAction.ReadValue<float>();
-        _downEdge = _ship.transform.position.y - _fishingLineLength;
     }
 
     private void FixedUpdate()
     {
-        var positionY = _rigidbody2d.position.y + _moveDirection * _speed * Time.deltaTime;
-        if (_fish != null)
+        if (!isMove)
         {
-            _fish.transform.position = transform.position;
+            return;
+        }
+        var positionY = _rigidbody2d.position.y + _moveDirection * _speed * Time.deltaTime;
+        if (fishOnHook != null)
+        {
+            fishOnHook.transform.position = transform.position;
         }
         if (positionY >= _topEdge)
         {
             positionY = _topEdge;
-            if (_fish != null)
+            if (fishOnHook != null)
             {
-                var fish = _fish.GetComponent<Fish>();
-                _fishSpawnManager.CaughtFish(fish.gameObject);
-                Destroy(_fish);
-                Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
+                var fish = fishOnHook.GetComponent<Fish>();
+                _fishSpawnManager.RemoveFish(fish.gameObject);
+                Destroy(fishOnHook);
             }
         }
         if (positionY <= _downEdge)
@@ -54,15 +71,16 @@ public class Hook : MonoBehaviour
         Vector2 movePosition = new Vector2(_ship.transform.position.x, positionY);
         _rigidbody2d.MovePosition(movePosition);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_fish == null)
+        if (fishOnHook == null)
         {
             var fish = collision.GetComponent<Fish>();
             if (fish != null)
             {
-                _fish = fish.CaughtFish();
-                Debug.Log($"{fish.fishAsset.fishName}  {fish.fishAsset.weight} {fish.fishAsset.cost}");
+                fishOnHook = fish.gameObject;
+                FishingManager.Instance.StartFishing(fish);
             }
         }
     }
