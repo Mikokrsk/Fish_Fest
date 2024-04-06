@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Hook : MonoBehaviour
 {
     [SerializeField] private InputAction _verticalMoveAction;
+    [SerializeField] private InputAction _horizontalMoveAction;
+    [SerializeField] private InputAction _moveAction;
     [SerializeField] private Rigidbody2D _rigidbody2d;
     [SerializeField] private GameObject _ship;
-    [SerializeField] private float _moveDirection;
-    [SerializeField] private float _speed;
+    [SerializeField] private Vector2 _moveVector;
+    [SerializeField] private float _hookSpeed;
+    [SerializeField] private float _shipSpeed;
     [SerializeField] private float _topEdge;
     [SerializeField] private float _downEdge;
+
     [SerializeField] private float _fishingLineLength;
     public GameObject fishOnHook;
     [SerializeField] private FishSpawnManager _fishSpawnManager;
@@ -32,14 +38,15 @@ public class Hook : MonoBehaviour
 
     void Start()
     {
-        _verticalMoveAction.Enable();
+        _moveAction.Enable();
         _topEdge = _ship.transform.position.y;
-        _downEdge = _ship.transform.position.y - _fishingLineLength;
+        _downEdge = _topEdge - _fishingLineLength;
     }
 
     void Update()
     {
-        _moveDirection = _verticalMoveAction.ReadValue<float>();
+        _moveVector = _moveAction.ReadValue<Vector2>();
+        _downEdge = _topEdge - _fishingLineLength;
     }
 
     private void FixedUpdate()
@@ -48,14 +55,28 @@ public class Hook : MonoBehaviour
         {
             return;
         }
-        var positionY = _rigidbody2d.position.y + _moveDirection * _speed * Time.deltaTime;
-        if (fishOnHook != null)
+
+        if (_moveVector != Vector2.zero)
         {
-            fishOnHook.transform.position = transform.position;
+            HookMove();
         }
-        if (positionY >= _topEdge)
+    }
+
+    private void HookMove()
+    {
+        var movePositionX = _rigidbody2d.position.x + _moveVector.x * _hookSpeed * Time.deltaTime;
+        var movePositionY = _rigidbody2d.position.y + _moveVector.y * _shipSpeed * Time.deltaTime;
+        _rigidbody2d.MovePosition(new Vector2(movePositionX, movePositionY));
+        Ship.Instance.rigidbody2d.MovePosition(new Vector2(movePositionX, _ship.transform.position.y));
+
+        if (_rigidbody2d.position.y < _downEdge)
         {
-            positionY = _topEdge;
+            _rigidbody2d.position = new Vector2(_rigidbody2d.position.x, _downEdge);
+        }
+        if (_rigidbody2d.position.y > _topEdge)
+        {
+            _rigidbody2d.position = new Vector2(_rigidbody2d.position.x, _topEdge);
+
             if (fishOnHook != null)
             {
                 var fish = fishOnHook.GetComponent<Fish>();
@@ -63,15 +84,32 @@ public class Hook : MonoBehaviour
                 Destroy(fishOnHook);
             }
         }
-        if (positionY <= _downEdge)
+    }
+    /*    private void HookHorizontalMove()
         {
-            positionY = _downEdge;
+            var positionX = _rigidbody2d.position.x + _moveDirection * _hookSpeed * Time.deltaTime;
+            Vector2 movePosition = new Vector2(positionX, transform.position.y);
+            _rigidbody2d.MovePosition(movePosition);
         }
 
-        Vector2 movePosition = new Vector2(_ship.transform.position.x, positionY);
-        _rigidbody2d.MovePosition(movePosition);
-    }
+        private void HookVerticalMove()
+        {
 
+            var positionY = _rigidbody2d.position.y + _moveDirection * _hookSpeed * Time.deltaTime;
+            if (fishOnHook != null)
+            {
+                fishOnHook.transform.position = transform.position;
+            }
+            
+            if (positionY <= _downEdge)
+            {
+                positionY = _downEdge;
+            }
+
+            Vector2 movePosition = new Vector2(_ship.transform.position.x, positionY);
+            _rigidbody2d.MovePosition(movePosition);
+        }
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (fishOnHook == null)
