@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    [SerializeField] private int _edgeX = 13;
-    [SerializeField] private float _speed = 1;
+    public int id;
+    [SerializeField] private int _leftEdge;
+    [SerializeField] private int _rightEdge;
+    [SerializeField] private float _speed;
     public bool _isMoving = true;
     public bool _isCaught = false;
     [SerializeField] public FishAsset fishAsset;
 
+    private void Awake()
+    {
+        _leftEdge = fishAsset.leftEdge;
+        _rightEdge = fishAsset.rightEdge;
+        _speed = fishAsset.speed;
+    }
+
     private void Start()
     {
-        if (transform.position.x >= -_edgeX && transform.position.x <= _edgeX)
+        if (transform.position.x >= _rightEdge && transform.position.x <= _leftEdge)
         {
             var direction = Random.Range(0, 2);
             if (direction == 0)
@@ -32,13 +41,13 @@ public class Fish : MonoBehaviour
         {
             return;
         }
-        if (transform.position.x <= -_edgeX)
+        if (transform.position.x <= _leftEdge)
         {
             transform.eulerAngles = new Vector3(0, 180f, 0);
         }
         else
         {
-            if (transform.position.x >= _edgeX)
+            if (transform.position.x >= _rightEdge)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }

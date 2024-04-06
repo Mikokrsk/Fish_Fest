@@ -32,8 +32,8 @@ public class Ship : MonoBehaviour
 
     private void Start()
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
+        // QualitySettings.vSyncCount = 0;
+        //   Application.targetFrameRate = 60;
         _horizontalMoveAction.Enable();
     }
 

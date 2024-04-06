@@ -447,7 +447,7 @@ MonoBehaviour:
   speed: 250
   _minSpeed: 0
   _maxSpeed: 0
-  direction: 1
+  _direction: 0
   _minDelay: 0.5
   _maxDelay: 2
 --- !u!1 &519420028
@@ -486,7 +486,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.058561735, g: 0.29097918, b: 0.6603774, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -511,7 +511,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -800,7 +800,7 @@ Transform:
   m_GameObject: {fileID: 921373201}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.13, z: 0}
   m_LocalScale: {x: 0.08046865, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1720,7 +1720,7 @@ GameObject:
   - component: {fileID: 1938567585}
   - component: {fileID: 1938567584}
   m_Layer: 0
-  m_Name: FishSpawmManager
+  m_Name: FishSpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1738,15 +1738,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3777a3b0cf8cdad469893d91b0d7a8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fishesList:
+  _fishesList: []
+  _fishesPrefsList:
   - {fileID: 3648119269325092252, guid: cd117dfd98c825a44860f9a590b85541, type: 3}
   - {fileID: 2799413428803488477, guid: 2ae48b4029d344844a962c74011f9b06, type: 3}
   - {fileID: 1925791985699667687, guid: 8a71dd0ae2bb7ef48b37988eba5976d5, type: 3}
-  _topEdge: -0.95
+  _fishAssets:
+  - {fileID: 11400000, guid: 6f56fe6c558117540a5400113a19109d, type: 2}
+  - {fileID: 11400000, guid: 75e8429a1df917046aafe25b5265a7b0, type: 2}
+  - {fileID: 11400000, guid: 64729e41ee24735439a8e7a4fb78b450, type: 2}
+  - {fileID: 11400000, guid: 35d2344db6a106742b1dd6825ee59a58, type: 2}
+  - {fileID: 11400000, guid: 11f440bef63d77344b2e9875e12e3192, type: 2}
+  - {fileID: 11400000, guid: f3028ddabe41ee949b5e12a5d56db141, type: 2}
+  - {fileID: 11400000, guid: 6c021646832f055459e97bd04ad96772, type: 2}
+  - {fileID: 11400000, guid: 40bbb6878a04c91469dba5d8d6f0e542, type: 2}
+  - {fileID: 11400000, guid: 191b5c4b9b382d1429794bdc91209ced, type: 2}
+  _topEdge: -2
   _leftEdge: -7
   _rightEdge: 7
   _bottomEdge: -2.23
-  _maxNumFish: 5
+  _maxNumFish: 10
 --- !u!4 &1938567585
 Transform:
   m_ObjectHideFlags: 0

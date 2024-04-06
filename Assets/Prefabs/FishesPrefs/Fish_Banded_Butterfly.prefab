@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3648119269325092252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: -4, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -100,8 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc01738574f8c540acb1fffb175e543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _edgeX: 13
+  id: 1
+  _leftEdge: 0
+  _rightEdge: 0
   _speed: 2
+  _isMoving: 1
+  _isCaught: 0
   fishAsset: {fileID: 11400000, guid: 6f56fe6c558117540a5400113a19109d, type: 2}
 --- !u!61 &2590574197244910507
 BoxCollider2D:

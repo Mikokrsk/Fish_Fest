@@ -10,12 +10,14 @@ public class FishUI : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float _minSpeed;
     [SerializeField] private float _maxSpeed;
-    [SerializeField] private float direction;
+    [SerializeField] private float _direction;
     [SerializeField] private float _minDelay;
     [SerializeField] private float _maxDelay;
 
     private void OnEnable()
     {
+        var fishAsset = Hook.Instance.fishOnHook.GetComponent<Fish>().fishAsset;
+        speed = fishAsset.speedUI;
         _minSpeed = speed / 2;
         _maxSpeed = speed + speed / 2;
         var position = Random.Range(_topEdgefishUI, _bottomEdgefishUI);
@@ -30,28 +32,28 @@ public class FishUI : MonoBehaviour
 
     void Update()
     {
-        _recTransform.localPosition += Vector3.down * direction * speed * Time.deltaTime;
+        _recTransform.localPosition += Vector3.down * _direction * speed * Time.deltaTime;
         if (_recTransform.localPosition.y < _bottomEdgefishUI)
         {
             _recTransform.localPosition = new Vector2(0, _bottomEdgefishUI);
-            direction = -direction;
+            _direction = -_direction;
         }
         else
         {
             if (_recTransform.localPosition.y > _topEdgefishUI)
             {
                 _recTransform.localPosition = new Vector2(0, _topEdgefishUI);
-                direction = -direction;
+                _direction = -_direction;
             }
         }
     }
 
     IEnumerator ChangeDirection()
     {
-        direction = Random.Range(-1, 1);
-        if (direction == 0)
+        _direction = Random.Range(-1, 1);
+        if (_direction == 0)
         {
-            direction = 1;
+            _direction = 1;
         }
         speed = Random.Range(_minSpeed, _maxSpeed);
 
