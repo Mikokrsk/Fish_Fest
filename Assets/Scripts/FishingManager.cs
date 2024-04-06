@@ -29,14 +29,12 @@ public class FishingManager : MonoBehaviour
         _fishOnHook = fishOnHook;
         _fishOnHook.StopMoving();
         _fishingUI.SetActive(true);
-        Ship.Instance.isMove = false;
         Hook.Instance.isMove = false;
     }
 
     public void StopFishing(bool result)
     {
         _fishingUI.SetActive(false);
-        Ship.Instance.isMove = true;
         Hook.Instance.isMove = true;
 
         if (result)
@@ -47,6 +45,5 @@ public class FishingManager : MonoBehaviour
         {
             FishSpawnManager.Instance.RemoveFish(_fishOnHook.gameObject);
         }
-
     }
 }
