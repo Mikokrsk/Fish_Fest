@@ -7,6 +7,7 @@ public class FishSpawnManager : MonoBehaviour
     [SerializeField] private List<GameObject> _fishesList;
     [SerializeField] private List<GameObject> _fishesPrefsList;
     [SerializeField] private List<FishAsset> _fishAssets;
+    [SerializeField] private List<Collider2D> _spawnZonesList;
     [SerializeField] private float _topEdge;
     [SerializeField] private float _leftEdge;
     [SerializeField] private float _rightEdge;
@@ -41,14 +42,19 @@ public class FishSpawnManager : MonoBehaviour
         var fish = fishPref.GetComponent<Fish>();
         fish.fishAsset = RandomisedFishAsset(fish.id);
 
-        var positionX = Random.Range(fish.fishAsset.leftEdge, fish.fishAsset.rightEdge);
-        var positionY = Random.Range(fish.fishAsset.topEdge, fish.fishAsset.bottomEdge);
+        /*        var positionX = Random.Range(fish.fishAsset.leftEdge, fish.fishAsset.rightEdge);
+                var positionY = Random.Range(fish.fishAsset.topEdge, fish.fishAsset.bottomEdge);*/
+        var curentSpawnZone = _spawnZonesList[fish.spawnZone];
+
+        var positionX = Random.Range(curentSpawnZone.bounds.min.x, curentSpawnZone.bounds.max.x);
+        var positionY = Random.Range(curentSpawnZone.bounds.min.y, curentSpawnZone.bounds.max.y);
+
         var position = new Vector2(positionX, positionY);
 
-
-
-        var fishObject = Instantiate(fishPref, transform);
+        var fishObject = Instantiate(fishPref, _spawnZonesList[fish.spawnZone].gameObject.transform);
         fish.transform.position = position;
+        fish.leftEdge = curentSpawnZone.bounds.min.x;
+        fish.rightEdge = curentSpawnZone.bounds.max.x;
         _fishesList.Add(fishObject);
     }
 

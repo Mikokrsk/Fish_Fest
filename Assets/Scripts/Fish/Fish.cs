@@ -5,23 +5,22 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     public int id;
-    [SerializeField] private int _leftEdge;
-    [SerializeField] private int _rightEdge;
+    public int spawnZone;
+    public float leftEdge;
+    public float rightEdge;
     [SerializeField] private float _speed;
-    public bool _isMoving = true;
-    public bool _isCaught = false;
+    public bool isMoving = true;
+    public bool isCaught = false;
     [SerializeField] public FishAsset fishAsset;
 
     private void Awake()
     {
-        _leftEdge = fishAsset.leftEdge;
-        _rightEdge = fishAsset.rightEdge;
         _speed = fishAsset.speed;
     }
 
     private void Start()
     {
-        if (transform.position.x >= _rightEdge && transform.position.x <= _leftEdge)
+        if (transform.position.x >= rightEdge && transform.position.x <= leftEdge)
         {
             var direction = Random.Range(0, 2);
             if (direction == 0)
@@ -37,17 +36,21 @@ public class Fish : MonoBehaviour
 
     void Update()
     {
-        if (!_isMoving)
+        if (isCaught)
+        {
+            transform.position = Hook.Instance.transform.position;
+        }
+        if (!isMoving)
         {
             return;
         }
-        if (transform.position.x <= _leftEdge)
+        if (transform.position.x <= leftEdge)
         {
             transform.eulerAngles = new Vector3(0, 180f, 0);
         }
         else
         {
-            if (transform.position.x >= _rightEdge)
+            if (transform.position.x >= rightEdge)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
@@ -57,18 +60,18 @@ public class Fish : MonoBehaviour
 
     public void CaughtFish()
     {
-        _isMoving = false;
-        _isCaught = true;
+        isMoving = false;
+        isCaught = true;
         transform.Rotate(new Vector3(0, 0, -90f));
     }
 
     public void StopMoving()
     {
-        _isMoving = false;
+        isMoving = false;
     }
 
     public void ContinuesMoving()
     {
-        _isMoving = false;
+        isMoving = false;
     }
 }
