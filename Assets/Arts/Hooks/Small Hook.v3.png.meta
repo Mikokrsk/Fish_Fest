@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b9b763c9170afc94498f1729ba1e2a76
+guid: 030575842bdc9334a8a23782d1e39c59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1154702325419674055
-    second: -5_0
+      213: -4160545944345670526
+    second: Small Hook.v3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,11 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.535, y: 0.61}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -126,22 +126,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: -5_0
+      name: Small Hook.v3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 57
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 936fa085a5ca9ffe0800000000000000
-      internalID: -1154702325419674055
+      spriteID: 28c8593d185c246c0800000000000000
+      internalID: -4160545944345670526
       vertices: []
       indices: 
       edges: []
@@ -149,15 +149,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      -5_0: -1154702325419674055
+      Small Hook.v3_0: -4160545944345670526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
