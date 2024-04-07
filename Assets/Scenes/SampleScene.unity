@@ -1229,7 +1229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1056203728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1239,7 +1239,7 @@ RectTransform:
   m_GameObject: {fileID: 1056203727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.21, y: 3.7592285, z: 3.7592285}
+  m_LocalScale: {x: 0.01, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1923335494}
@@ -1247,8 +1247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.62, y: 1.5}
-  m_SizeDelta: {x: 63.38, y: 43.7}
+  m_AnchoredPosition: {x: -0.337, y: 1.389}
+  m_SizeDelta: {x: 50, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056203729
 MonoBehaviour:
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 10
   m_PresetInfoIsWorld: 1
 --- !u!223 &1056203731
 Canvas:
@@ -1312,7 +1312,7 @@ Canvas:
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
 --- !u!1 &1066089061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,7 @@ Transform:
   m_GameObject: {fileID: 1066089061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 175, y: -44, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1379,7 +1379,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -44.51192, y: -14.589714}
+  m_Offset: {x: 130.6, y: -58}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1389,7 +1389,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 25.049751, y: 18.347412}
+  m_Size: {x: 19.5, y: 15.7}
   m_EdgeRadius: 0
 --- !u!1 &1119011872
 GameObject:
@@ -1584,7 +1584,7 @@ Transform:
   m_GameObject: {fileID: 1380554269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.6, y: -0.14, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1624,7 +1624,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -4.861264}
+  m_Offset: {x: 82.5, y: -5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1634,7 +1634,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 180.7, y: 7.9620953}
+  m_Size: {x: 180, y: 8}
   m_EdgeRadius: 0
 --- !u!1 &1380690165
 GameObject:
@@ -2083,6 +2083,7 @@ MonoBehaviour:
   rigidbody2d: {fileID: 1583464325}
   _weight: 0
   _maxWeight: 5
+  _weightText: {fileID: 1923335495}
   _cost: 0
 --- !u!1 &1655782879
 GameObject:
@@ -2262,7 +2263,7 @@ Transform:
   m_GameObject: {fileID: 1739749586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 114.5, y: -11.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2302,7 +2303,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -6.1916018}
+  m_Offset: {x: 114.5, y: -16.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2312,7 +2313,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 117.07, y: 14.843157}
+  m_Size: {x: 116, y: 15}
   m_EdgeRadius: 0
 --- !u!1 &1777934093
 GameObject:
@@ -2489,7 +2490,7 @@ GameObject:
   - component: {fileID: 1923335496}
   - component: {fileID: 1923335495}
   m_Layer: 5
-  m_Name: Weight
+  m_Name: WeightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2511,8 +2512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.045002, y: 0}
-  m_SizeDelta: {x: -42.29001, y: -28.7}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923335495
 MonoBehaviour:
@@ -2527,7 +2528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2536,18 +2537,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
+    m_FontSize: 10
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "Weight: \n1/2"
 --- !u!222 &1923335496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2585,31 +2586,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3777a3b0cf8cdad469893d91b0d7a8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fishesList: []
-  _fishesPrefsList:
-  - {fileID: 3648119269325092252, guid: cd117dfd98c825a44860f9a590b85541, type: 3}
-  - {fileID: 2799413428803488477, guid: 2ae48b4029d344844a962c74011f9b06, type: 3}
-  - {fileID: 1925791985699667687, guid: 8a71dd0ae2bb7ef48b37988eba5976d5, type: 3}
-  _fishAssets:
-  - {fileID: 11400000, guid: 6f56fe6c558117540a5400113a19109d, type: 2}
-  - {fileID: 11400000, guid: 75e8429a1df917046aafe25b5265a7b0, type: 2}
-  - {fileID: 11400000, guid: 64729e41ee24735439a8e7a4fb78b450, type: 2}
-  - {fileID: 11400000, guid: 35d2344db6a106742b1dd6825ee59a58, type: 2}
-  - {fileID: 11400000, guid: 11f440bef63d77344b2e9875e12e3192, type: 2}
-  - {fileID: 11400000, guid: f3028ddabe41ee949b5e12a5d56db141, type: 2}
-  - {fileID: 11400000, guid: 6c021646832f055459e97bd04ad96772, type: 2}
-  - {fileID: 11400000, guid: 40bbb6878a04c91469dba5d8d6f0e542, type: 2}
-  - {fileID: 11400000, guid: 191b5c4b9b382d1429794bdc91209ced, type: 2}
   _spawnZonesList:
-  - {fileID: 1380554271}
-  - {fileID: 1739749588}
-  - {fileID: 1987715031}
-  - {fileID: 1066089063}
-  _topEdge: -2
-  _leftEdge: -7
-  _rightEdge: 7
-  _bottomEdge: -2.23
-  _maxNumFish: 20
+  - id: 0
+    collider: {fileID: 1380554271}
+    num: 50
+    fishesPrefsList:
+    - fishPref: {fileID: 3648119269325092252, guid: cd117dfd98c825a44860f9a590b85541, type: 3}
+      fishAssets:
+      - {fileID: 11400000, guid: 6f56fe6c558117540a5400113a19109d, type: 2}
+      - {fileID: 11400000, guid: 75e8429a1df917046aafe25b5265a7b0, type: 2}
+      - {fileID: 11400000, guid: 64729e41ee24735439a8e7a4fb78b450, type: 2}
+    fishGameObjects: []
+  - id: 1
+    collider: {fileID: 1739749588}
+    num: 20
+    fishesPrefsList:
+    - fishPref: {fileID: 2799413428803488477, guid: 2ae48b4029d344844a962c74011f9b06, type: 3}
+      fishAssets:
+      - {fileID: 11400000, guid: 35d2344db6a106742b1dd6825ee59a58, type: 2}
+      - {fileID: 11400000, guid: 11f440bef63d77344b2e9875e12e3192, type: 2}
+      - {fileID: 11400000, guid: f3028ddabe41ee949b5e12a5d56db141, type: 2}
+    fishGameObjects: []
+  - id: 2
+    collider: {fileID: 1987715031}
+    num: 10
+    fishesPrefsList:
+    - fishPref: {fileID: 1925791985699667687, guid: 8a71dd0ae2bb7ef48b37988eba5976d5, type: 3}
+      fishAssets:
+      - {fileID: 11400000, guid: 6c021646832f055459e97bd04ad96772, type: 2}
+      - {fileID: 11400000, guid: 40bbb6878a04c91469dba5d8d6f0e542, type: 2}
+      - {fileID: 11400000, guid: 191b5c4b9b382d1429794bdc91209ced, type: 2}
+    fishGameObjects: []
+  - id: 3
+    collider: {fileID: 1066089063}
+    num: 0
+    fishesPrefsList: []
+    fishGameObjects: []
 --- !u!4 &1938567585
 Transform:
   m_ObjectHideFlags: 0
@@ -2655,7 +2667,7 @@ Transform:
   m_GameObject: {fileID: 1987715029}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 175, y: -21.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2695,7 +2707,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -30.478043, y: -15.662642}
+  m_Offset: {x: 143.5, y: -37}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2705,7 +2717,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 57.40921, y: 21.523273}
+  m_Size: {x: 57, y: 22}
   m_EdgeRadius: 0
 --- !u!1 &2122695494
 GameObject:

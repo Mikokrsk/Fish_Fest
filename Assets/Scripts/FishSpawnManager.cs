@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FishSpawnManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _fishesList;
-    [SerializeField] private List<GameObject> _fishesPrefsList;
-    [SerializeField] private List<FishAsset> _fishAssets;
-    [SerializeField] private List<Collider2D> _spawnZonesList;
-    [SerializeField] private float _topEdge;
-    [SerializeField] private float _leftEdge;
-    [SerializeField] private float _rightEdge;
-    [SerializeField] private float _bottomEdge;
-    [SerializeField] private float _maxNumFish;
+    // [SerializeField] private List<GameObject> _fishesList;
+    //  [SerializeField] private List<GameObject> _fishesPrefsList;
+    // [SerializeField] private List<FishAsset> _fishAssets;
+    //[SerializeField] private List<Collider2D> _spawnZonesList;
+    [SerializeField] private List<FishZone> _spawnZonesList;
+    /*    [SerializeField] private float _topEdge;
+        [SerializeField] private float _leftEdge;
+        [SerializeField] private float _rightEdge;
+        [SerializeField] private float _bottomEdge;
+        [SerializeField] private float _maxNumFish;*/
     public static FishSpawnManager Instance { get; private set; }
 
     private void Awake()
@@ -20,7 +22,6 @@ public class FishSpawnManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            /*                DontDestroyOnLoad(gameObject);*/
         }
         else
         {
@@ -28,39 +29,33 @@ public class FishSpawnManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Start()
     {
-        if (_fishesList.Count < _maxNumFish)
-        {
-            var id = Random.Range(0, _fishesPrefsList.Count);
-            SpawnFish(_fishesPrefsList[id]);
-        }
+        StartCoroutine(CheckFishZoneNum());
     }
 
-    public void SpawnFish(GameObject fishPref)
+    public void SpawnFish(int fishZoneId)
     {
-        var fish = fishPref.GetComponent<Fish>();
-        fish.fishAsset = RandomisedFishAsset(fish.id);
+        var curentFishZone = _spawnZonesList.Find(x => x.id == fishZoneId);
 
-        /*        var positionX = Random.Range(fish.fishAsset.leftEdge, fish.fishAsset.rightEdge);
-                var positionY = Random.Range(fish.fishAsset.topEdge, fish.fishAsset.bottomEdge);*/
-        var curentSpawnZone = _spawnZonesList[fish.spawnZone];
+        var fishPref = curentFishZone.fishesPrefsList[Random.Range(0, curentFishZone.fishesPrefsList.Count)];
+        var fish = fishPref.fishPref.GetComponent<Fish>();
+        fish.fishAsset = RandomisedFishAsset(fishPref.fishAssets);
 
-        var positionX = Random.Range(curentSpawnZone.bounds.min.x, curentSpawnZone.bounds.max.x);
-        var positionY = Random.Range(curentSpawnZone.bounds.min.y, curentSpawnZone.bounds.max.y);
-
+        var positionX = Random.Range(curentFishZone.collider.bounds.min.x, curentFishZone.collider.bounds.max.x);
+        var positionY = Random.Range(curentFishZone.collider.bounds.min.y, curentFishZone.collider.bounds.max.y);
         var position = new Vector2(positionX, positionY);
 
-        var fishObject = Instantiate(fishPref, _spawnZonesList[fish.spawnZone].gameObject.transform);
+        var fishObject = Instantiate(fish, curentFishZone.collider.gameObject.transform);
         fish.transform.position = position;
-        fish.leftEdge = curentSpawnZone.bounds.min.x;
-        fish.rightEdge = curentSpawnZone.bounds.max.x;
-        _fishesList.Add(fishObject);
+        fish.leftEdge = curentFishZone.collider.bounds.min.x;
+        fish.rightEdge = curentFishZone.collider.bounds.max.x;
+
+        curentFishZone.fishGameObjects.Add(fishObject.gameObject);
     }
 
-    private FishAsset RandomisedFishAsset(int fishId)
+    private FishAsset RandomisedFishAsset(List<FishAsset> fishAssets)
     {
-        var fishAssets = _fishAssets.FindAll(x => x.id == fishId);
         // Common = 60% [4-9] Rare = 30% [1-3] Legendary = 10% [0]
         var rarity = Random.Range(0, 10);
 
@@ -78,7 +73,47 @@ public class FishSpawnManager : MonoBehaviour
 
     public void RemoveFish(GameObject fish)
     {
-        _fishesList.Remove(fish);
-        Destroy(fish);
+        for (int i = 0; i < _spawnZonesList.Count; i++)
+        {
+            if (_spawnZonesList[i].fishGameObjects.Find(x => x.gameObject == fish))
+            {
+                Destroy(fish);
+                SpawnFish(i);
+            }
+        }
+    }
+
+    IEnumerator CheckFishZoneNum()
+    {
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < _spawnZonesList.Count;)
+        {
+            if (_spawnZonesList[i].fishGameObjects.Count < _spawnZonesList[i].num)
+            {
+                SpawnFish(i);
+            }
+            else
+            {
+                i++;
+            }
+        }
+
+        //   StartCoroutine(CheckFishZoneNum());
+    }
+
+    [System.Serializable]
+    public struct FishZone
+    {
+        public int id;
+        public Collider2D collider;
+        public int num;
+        public List<FishPref> fishesPrefsList;
+        public List<GameObject> fishGameObjects;
+    }
+    [System.Serializable]
+    public struct FishPref
+    {
+        public GameObject fishPref;
+        public List<FishAsset> fishAssets;
     }
 }

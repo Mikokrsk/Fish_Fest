@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Ship : MonoBehaviour
     public static Ship Instance;
     [SerializeField] private int _weight;
     [SerializeField] private int _maxWeight;
+    [SerializeField] private Text _weightText;
     [SerializeField] private int _cost;
 
     private void Awake()
@@ -28,19 +30,25 @@ public class Ship : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 60;
+        _weightText.text = $"Weight:\n{_weight}/{_maxWeight}";
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var hook = collision.gameObject.GetComponent<Hook>();
         if (hook != null)
         {
-            var fish = hook.fishOnHook.GetComponent<Fish>();
-            if (_weight + fish.fishAsset.weight <= _maxWeight)
+            if (hook?.fishOnHook != null)
             {
-                _weight += fish.fishAsset.weight;
-                _cost += fish.fishAsset.cost;
+                var fish = hook.fishOnHook.GetComponent<Fish>();
+                if (_weight + fish.fishAsset.weight <= _maxWeight)
+                {
+                    _weight += fish.fishAsset.weight;
+                    _cost += fish.fishAsset.cost;
+
+                    _weightText.text = $"Weight:\n{_weight}/{_maxWeight}";
+                }
+                FishSpawnManager.Instance.RemoveFish(hook.fishOnHook);
             }
-            FishSpawnManager.Instance.RemoveFish(hook.fishOnHook);
         }
     }
 }
