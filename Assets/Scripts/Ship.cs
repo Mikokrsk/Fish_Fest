@@ -43,8 +43,7 @@ public class Ship : MonoBehaviour
                 if (_weight + fish.fishAsset.weight <= _maxWeight)
                 {
                     _weight += fish.fishAsset.weight;
-                    _cost += fish.fishAsset.cost;
-
+                    PlayerInventory.Instance.fishAssetsList.Add(fish.fishAsset);
                     _weightText.text = $"Weight:\n{_weight}/{_maxWeight}";
                 }
                 FishSpawnManager.Instance.RemoveFish(hook.fishOnHook);
