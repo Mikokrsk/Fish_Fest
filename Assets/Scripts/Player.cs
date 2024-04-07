@@ -6,13 +6,14 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private InputAction _moveAction;
+    //[SerializeField] private InputAction _moveAction;
     [SerializeField] private InputAction _horizontalMoveAction;
 
     [SerializeField] private Rigidbody2D _rigidbody2d;
     [SerializeField] private float _speed;
     [SerializeField] private float _moveDirection;
     [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] public bool isMoving;
 
     [SerializeField] private int _money;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
-        DontDestroyOnLoad(Instance);
+        // DontDestroyOnLoad(Instance);
     }
     private void Start()
     {
@@ -46,14 +47,14 @@ public class Player : MonoBehaviour
         {
             if (_moveDirection > 0)
             {
-                transform.eulerAngles = new Vector3(0, 180f, 0);
+                _spriteRenderer.flipX = true;
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                _spriteRenderer.flipX = false;
             }
             _animator.SetBool("IsMove", true);
-            transform.Translate(Vector2.left * _speed * Time.deltaTime);
+            transform.Translate(Vector2.right * _speed * _moveDirection * Time.deltaTime);
         }
         else
         {

@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: e69b769615993d9428e669b0f35dff09
+guid: f36cb8c42b6066e45b66e79b15d918bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7057540570176626024
-    second: -9_0
+      213: -8042923433678313897
+    second: Payer Move.v3 (2)_0
   - first:
-      213: 4860104115784655078
-    second: -9_1
+      213: 6309107812142768178
+    second: Payer Move.v3 (2)_1
   - first:
-      213: 3452187967837374071
-    second: -9_2
+      213: 2013735632612857244
+    second: Payer Move.v3 (2)_2
   - first:
-      213: -7293225528397478521
-    second: -9_3
+      213: 6523881387223818834
+    second: Payer Move.v3 (2)_3
   - first:
-      213: -4083771725764492255
-    second: -9_4
+      213: 7317124796978216713
+    second: Payer Move.v3 (2)_4
   - first:
-      213: 6047353452145921258
-    second: -9_5
+      213: -5979138882091684869
+    second: Payer Move.v3 (2)_5
   - first:
-      213: 7091023277918255745
-    second: -9_6
+      213: -8351850022325461574
+    second: Payer Move.v3 (2)_6
   - first:
-      213: 2533600222262927783
-    second: -9_7
+      213: 7728664604463605995
+    second: Payer Move.v3 (2)_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 33
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,13 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: -9_0
+      name: Payer Move.v3 (2)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 62
-        width: 25
-        height: 58
+        y: 125
+        width: 49
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 892e6be6e349e0e90800000000000000
-      internalID: -7057540570176626024
+      spriteID: 75660f310cbc16090800000000000000
+      internalID: -8042923433678313897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: -9_1
+      name: Payer Move.v3 (2)_1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 61
-        width: 28
-        height: 59
+        x: 85
+        y: 123
+        width: 54
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e022c081fe827340800000000000000
-      internalID: 4860104115784655078
+      spriteID: 2306968c0247e8750800000000000000
+      internalID: 6309107812142768178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: -9_2
+      name: Payer Move.v3 (2)_2
       rect:
         serializedVersion: 2
-        x: 83
-        y: 61
-        width: 26
-        height: 59
+        x: 167
+        y: 123
+        width: 50
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77603d09aa2a8ef20800000000000000
-      internalID: 3452187967837374071
+      spriteID: c959f6d73e932fb10800000000000000
+      internalID: 2013735632612857244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: -9_3
+      name: Payer Move.v3 (2)_3
       rect:
         serializedVersion: 2
-        x: 121
-        y: 61
-        width: 19
-        height: 59
+        x: 243
+        y: 123
+        width: 36
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 785ce09e50249ca90800000000000000
-      internalID: -7293225528397478521
+      spriteID: 25222428e8b798a50800000000000000
+      internalID: 6523881387223818834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: -9_4
+      name: Payer Move.v3 (2)_4
       rect:
         serializedVersion: 2
-        x: 3
+        x: 7
+        y: 1
+        width: 36
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90fb61d2c36ab8560800000000000000
+      internalID: 7317124796978216713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Payer Move.v3 (2)_5
+      rect:
+        serializedVersion: 2
+        x: 89
         y: 0
-        width: 19
-        height: 59
+        width: 36
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 124060e80478357c0800000000000000
-      internalID: -4083771725764492255
+      spriteID: bfbe2369dd4d50da0800000000000000
+      internalID: -5979138882091684869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: -9_5
+      name: Payer Move.v3 (2)_6
       rect:
         serializedVersion: 2
-        x: 44
+        x: 167
         y: 0
-        width: 19
-        height: 59
+        width: 36
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aecc36aace38ce350800000000000000
-      internalID: 6047353452145921258
+      spriteID: abdd3f997a4481c80800000000000000
+      internalID: -8351850022325461574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: -9_6
+      name: Payer Move.v3 (2)_7
       rect:
         serializedVersion: 2
-        x: 83
+        x: 239
         y: 0
-        width: 19
-        height: 59
+        width: 43
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,29 +308,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18af756f910686260800000000000000
-      internalID: 7091023277918255745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: -9_7
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 0
-        width: 22
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a125d28af7292320800000000000000
-      internalID: 2533600222262927783
+      spriteID: be82031728bb14b60800000000000000
+      internalID: 7728664604463605995
       vertices: []
       indices: 
       edges: []
@@ -325,14 +325,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      -9_0: -7057540570176626024
-      -9_1: 4860104115784655078
-      -9_2: 3452187967837374071
-      -9_3: -7293225528397478521
-      -9_4: -4083771725764492255
-      -9_5: 6047353452145921258
-      -9_6: 7091023277918255745
-      -9_7: 2533600222262927783
+      Payer Move.v3 (2)_0: -8042923433678313897
+      Payer Move.v3 (2)_1: 6309107812142768178
+      Payer Move.v3 (2)_2: 2013735632612857244
+      Payer Move.v3 (2)_3: 6523881387223818834
+      Payer Move.v3 (2)_4: 7317124796978216713
+      Payer Move.v3 (2)_5: -5979138882091684869
+      Payer Move.v3 (2)_6: -8351850022325461574
+      Payer Move.v3 (2)_7: 7728664604463605995
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
