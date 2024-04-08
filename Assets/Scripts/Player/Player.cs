@@ -27,9 +27,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
-        // DontDestroyOnLoad(Instance);
     }
     private void Start()
     {

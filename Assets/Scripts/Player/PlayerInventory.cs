@@ -15,8 +15,8 @@ public class PlayerInventory : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(Instance);
+        DontDestroyOnLoad(Instance.gameObject);
     }
 }

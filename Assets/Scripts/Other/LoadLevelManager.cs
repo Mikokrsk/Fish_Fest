@@ -15,7 +15,7 @@ public class LoadLevelManager : MonoBehaviour
         }
         else
         {
-            Destroy(Instance);
+            Destroy(this.gameObject);
         }
     }
 
