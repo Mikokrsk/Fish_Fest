@@ -19,14 +19,12 @@ public class LoadLevelManager : MonoBehaviour
         }
     }
 
-    public void LoadLevel(int id)
+    public void LoadLevel(int id = 1)
     {
-        SceneManager.LoadScene(id);
         SceneManager.LoadScene(id);
     }
     public void LoadLevel(string name)
     {
-        SceneManager.LoadScene(name);
         SceneManager.LoadScene(name);
     }
 }
