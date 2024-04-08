@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1925791985699667687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 154.58887, y: -35.55435, z: 0}
+  m_LocalPosition: {x: 121.13347, y: -47.23946, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -107,7 +107,7 @@ MonoBehaviour:
   _speed: 2
   isMoving: 1
   isCaught: 0
-  fishAsset: {fileID: 11400000, guid: 191b5c4b9b382d1429794bdc91209ced, type: 2}
+  fishAsset: {fileID: 11400000, guid: 40bbb6878a04c91469dba5d8d6f0e542, type: 2}
 --- !u!61 &6281641048476582814
 BoxCollider2D:
   m_ObjectHideFlags: 0

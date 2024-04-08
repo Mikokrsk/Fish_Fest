@@ -47,7 +47,7 @@ public class Hook : MonoBehaviour
     void Start()
     {
         _moveAction.Enable();
-        _topEdge = _ship.transform.position.y;
+        _topEdge = _ship.GetComponent<Collider2D>().bounds.min.y;
         _downEdge = _topEdge - _fishingLineLength;
     }
 

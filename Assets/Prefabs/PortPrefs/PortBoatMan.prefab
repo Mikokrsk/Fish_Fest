@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2799413428803488477
+--- !u!1 &2533527066382165700
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6258887140657291553}
-  - component: {fileID: 7930072551030060358}
-  - component: {fileID: 8185262158890838506}
-  - component: {fileID: 7645995408837984912}
+  - component: {fileID: 4598203585112461630}
+  - component: {fileID: 4317039802691045548}
+  - component: {fileID: 5710055298217320050}
+  - component: {fileID: 1164586563220898254}
   m_Layer: 0
-  m_Name: Fish_Atlantic_Golianth_Grouper
+  m_Name: PortBoatMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6258887140657291553
+--- !u!4 &4598203585112461630
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799413428803488477}
+  m_GameObject: {fileID: 2533527066382165700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.7105, y: -14.611118, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.68, y: -2.79, z: -0.5}
+  m_LocalScale: {x: 2.9999998, y: 2.9999998, z: 2.9999998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7930072551030060358
+--- !u!114 &4317039802691045548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2533527066382165700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc749d10ced6dc4082c061e519de530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 5710055298217320050}
+--- !u!212 &5710055298217320050
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799413428803488477}
+  m_GameObject: {fileID: 2533527066382165700}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,44 +90,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4fd029da27c3b434fbcd15e52f837ed1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -5814578404914571054, guid: 783641490eee2064f92c85a305a4379f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.45, y: 0.19}
+  m_Size: {x: 0.48, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8185262158890838506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799413428803488477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc01738574f8c540acb1fffb175e543, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 2
-  spawnZone: 1
-  leftEdge: 56.5
-  rightEdge: 172.5
-  _speed: 2
-  isMoving: 1
-  isCaught: 0
-  fishAsset: {fileID: 11400000, guid: 11f440bef63d77344b2e9875e12e3192, type: 2}
---- !u!61 &7645995408837984912
+--- !u!61 &1164586563220898254
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799413428803488477}
+  m_GameObject: {fileID: 2533527066382165700}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -142,15 +135,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.225, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 0.45, y: 0.19}
-    newSize: {x: 0.45, y: 0.19}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 1.22}
+    newSize: {x: 0.48, y: 1.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.45, y: 0.115}
+  m_Size: {x: 0.48, y: 1.22}
   m_EdgeRadius: 0

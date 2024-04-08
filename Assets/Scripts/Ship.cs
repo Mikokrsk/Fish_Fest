@@ -32,7 +32,7 @@ public class Ship : MonoBehaviour
         Application.targetFrameRate = 60;
         _weightText.text = $"Weight:\n{_weight}/{_maxWeight}";
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         var hook = collision.gameObject.GetComponent<Hook>();
         if (hook != null)
