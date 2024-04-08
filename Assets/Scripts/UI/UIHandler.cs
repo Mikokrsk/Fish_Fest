@@ -8,6 +8,7 @@ public class UIHandler : MonoBehaviour
     [SerializeField] public GameMode _gameMode = GameMode.MainMenu;
     [SerializeField] private GameObject _MainMenuUIObject;
     [SerializeField] private GameObject _GameUIObject;
+    [SerializeField] private Button _ToPortButton;
     public static UIHandler Instance { get; private set; }
 
     private void Awake()
@@ -18,13 +19,15 @@ public class UIHandler : MonoBehaviour
         }
         else
         {
-             Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
         //  DontDestroyOnLoad(Instance.gameObject);
     }
 
     private void Start()
     {
+        _ToPortButton = _uiDocument.rootVisualElement.Q<Button>("ToPortButton");
+
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             ChangeGameMode(GameMode.MainMenu);
@@ -32,6 +35,15 @@ public class UIHandler : MonoBehaviour
         else
         {
             ChangeGameMode(GameMode.Game);
+        }
+        if (SceneManager.GetActiveScene().name == "Ocean")
+        {
+            _ToPortButton.clicked += () => LoadLevelManager.Instance.LoadLevel(1);
+            _ToPortButton.style.display = DisplayStyle.Flex;
+        }
+        else
+        {
+            _ToPortButton.style.display = DisplayStyle.None;
         }
     }
 

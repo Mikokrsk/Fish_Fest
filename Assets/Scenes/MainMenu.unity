@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1647a78228cf9f44c97868aef68b4535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentDialogueTree: {fileID: 11400000, guid: e549e6cb572cf204ba229f698dcac156, type: 2}
+  currentDialogueTree: {fileID: 0}
   _printSpeed: 0.2
   _afterPrintDelay: 2
   _answersStyleSheet: {fileID: 7433441132597879392, guid: 396c6d37f88492f489d7caee9d21b4b8, type: 3}

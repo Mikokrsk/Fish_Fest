@@ -14,8 +14,11 @@ public class PortShip : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        _spriteRenderer.color = Color.white;
-        LoadLevelManager.Instance.LoadLevel("Ocean");
+        if (NPCDialogueManager.Instance.currentDialogueTree == null)
+        {
+            _spriteRenderer.color = Color.white;
+            LoadLevelManager.Instance.LoadLevel("Ocean");
+        }
     }
     private void OnMouseExit()
     {

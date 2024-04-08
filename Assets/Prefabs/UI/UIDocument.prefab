@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1647a78228cf9f44c97868aef68b4535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentDialogueTree: {fileID: 11400000, guid: e549e6cb572cf204ba229f698dcac156, type: 2}
+  currentDialogueTree: {fileID: 0}
   _printSpeed: 0.2
   _afterPrintDelay: 2
   _answersStyleSheet: {fileID: 7433441132597879392, guid: 396c6d37f88492f489d7caee9d21b4b8, type: 3}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: a53a3754d91f9b74d962d3e654c3e6d0, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: ffac1f5c18f1528469c8f9f15ab3391c, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4adcdb13054b1044eacdbcb6aa80401e, type: 3}
   m_SortingOrder: 0
 --- !u!114 &5600415047873985886
 MonoBehaviour:

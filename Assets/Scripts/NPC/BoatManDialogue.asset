@@ -14,9 +14,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSections:
   - dialogue:
-    - HI
-    - I am Boat Man
+    - 'Hi '
+    endAfterDialogue: 0
+    branchPoint:
+      question: Do you want to upgrade your boat?
+      answers:
+      - answerLabel: Yes I want.
+        gameEvents: []
+        nextDialogueSection: 0
+  - dialogue:
+    - 'Hi '
+    endAfterDialogue: 0
+    branchPoint:
+      question: If you want, I can upgrade your boat.
+      answers:
+      - answerLabel: Yes, please.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - ' I used to be a fisherman like you, then shark eat me leg.'
     endAfterDialogue: 1
     branchPoint:
       question: 
+      answers: []
+  - dialogue:
+    - Hi
+    endAfterDialogue: 0
+    branchPoint:
+      question: The best boat upgrade only for you.
+      answers:
+      - answerLabel: Thanks, mate.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - Hi
+    endAfterDialogue: 0
+    branchPoint:
+      question: "Do you need a little upgrade?\r"
+      answers:
+      - answerLabel: 'Only small one. '
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - "Hi\r"
+    endAfterDialogue: 0
+    branchPoint:
+      question: New day, new upgrade.
+      answers:
+      - answerLabel: And new opportunity.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - "Hi\r"
+    endAfterDialogue: 0
+    branchPoint:
+      question: "Good day sir, upgrade?\r"
+      answers:
+      - answerLabel: Upgrade.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - "I drink rum so that my hands stop shaking.\r\r"
+    endAfterDialogue: 1
+    branchPoint:
+      question: "\r"
       answers: []

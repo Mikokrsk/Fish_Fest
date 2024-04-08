@@ -15,8 +15,73 @@ MonoBehaviour:
   dialogueSections:
   - dialogue:
     - HI
-    - I am FishBuyerMan
-    endAfterDialogue: 1
+    endAfterDialogue: 0
     branchPoint:
-      question: 
-      answers: []
+      question: ' Do you have some fresh fish?'
+      answers:
+      - answerLabel: The freshest fish.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: "I will buy your fish.\r"
+      answers:
+      - answerLabel: Good.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: " I buy fish every size.\r"
+      answers:
+      - answerLabel: 'Good to hear. '
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: "That fish look small.\r\r"
+      answers:
+      - answerLabel: Looks average to me.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: " Shut up and take my money.\r\r"
+      answers:
+      - answerLabel: It's a pleasure doing business with you.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: " I hope you have a good catch.\r\r"
+      answers:
+      - answerLabel: I caught a big one.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Once I saw a dad who looked like an octopus.
+      answers:
+      - answerLabel: Suspiciously.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: " If you catch a kraken, sell it to me.\r"
+      answers:
+      - answerLabel: Of course.
+        gameEvents: []
+        nextDialogueSection: -1

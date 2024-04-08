@@ -21,6 +21,7 @@ public class InteractionObject : MonoBehaviour
     private void OnMouseDown()
     {
         _spriteRenderer.color = new Color(0, 0, 0, 0);
+        _dialogueSectionIndex = Random.Range(0, _dialogueAsset.dialogueSections.Length);
         NPCDialogueManager.Instance.StartDialogue(_dialogueAsset, _name, _dialogueSectionIndex);
     }
 }

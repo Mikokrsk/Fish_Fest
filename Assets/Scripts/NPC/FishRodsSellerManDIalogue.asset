@@ -15,8 +15,73 @@ MonoBehaviour:
   dialogueSections:
   - dialogue:
     - HI
-    - I`am  Fish Rods Seller Man.
-    endAfterDialogue: 1
+    endAfterDialogue: 0
     branchPoint:
-      question: 
-      answers: []
+      question: Hooks and rods for everyone.
+      answers:
+      - answerLabel: Let me see.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Need a new hook or fishing rod?
+      answers:
+      - answerLabel: That's why I am here.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Need some help?
+      answers:
+      - answerLabel: I'm just looking.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: You can watch, but not touch.
+      answers:
+      - answerLabel: I don't know if I can hold myself.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Do you like what you see?
+      answers:
+      - answerLabel: Oh, yes sir.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: May be force be with you.
+      answers:
+      - answerLabel: May be force be with you, master.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Only good quality stuff.
+      answers:
+      - answerLabel: That what I'm talking about.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: With this equipment, you can catch a kraken.
+      answers:
+      - answerLabel: I will try.
+        gameEvents: []
+        nextDialogueSection: -1

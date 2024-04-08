@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 public class NPCDialogueManager : MonoBehaviour
 {
     // [Header("Dialogue")]
-    [SerializeField] private DialogueAsset _currentDialogueTree;
+    public DialogueAsset currentDialogueTree;
     [SerializeField] private float _printSpeed;
     [SerializeField] private float _afterPrintDelay;
     private VisualElement _dialogueBox;
@@ -38,7 +38,7 @@ public class NPCDialogueManager : MonoBehaviour
 
     void Start()
     {
-        _dialogueBox = UIHandler.Instance._uiDocument.rootVisualElement.Q<VisualElement>("DialogueBackground");
+        _dialogueBox = UIHandler.Instance._uiDocument.rootVisualElement.Q<VisualElement>("NPCDialogue");
         _answersBox = UIHandler.Instance._uiDocument.rootVisualElement.Q<VisualElement>("AnswersBox");
         _answersScrollView = UIHandler.Instance._uiDocument.rootVisualElement.Q<ScrollView>("AnswersScrollView");
         _dialogueLabel = UIHandler.Instance._uiDocument.rootVisualElement.Q<Label>("DialogText");
@@ -50,7 +50,7 @@ public class NPCDialogueManager : MonoBehaviour
     public void StartDialogue(DialogueAsset dialogueTree, string name, int startSection)
     {
         ResetDialogueBox();
-        _currentDialogueTree = dialogueTree;
+        currentDialogueTree = dialogueTree;
         _headerLabel.text = name;
         _dialogueBox.style.display = DisplayStyle.Flex;
         StartCoroutine(RunDialogue(dialogueTree, startSection));
@@ -67,7 +67,7 @@ public class NPCDialogueManager : MonoBehaviour
         StopAllCoroutines();
         _answersBox.style.display = DisplayStyle.None;
         _headerLabel.text = null;
-        _currentDialogueTree = null;
+        currentDialogueTree = null;
         _answersScrollView.Clear();
     }
 
@@ -108,7 +108,7 @@ public class NPCDialogueManager : MonoBehaviour
 
         for (int i = 0; i < answers.Length; i++)
         {
-            var answerButton = CreateAnswerButton(_currentDialogueTree, answers[i]);
+            var answerButton = CreateAnswerButton(currentDialogueTree, answers[i]);
             _answersScrollView.Insert(i, answerButton);
         }
     }
