@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Styles/DialogueUIStyle.uss?fileID=7433441132597879392&amp;guid=396c6d37f88492f489d7caee9d21b4b8&amp;type=3#DialogueUIStyle" />
+    <ui:VisualElement name="DialogueBackground" style="background-image: url(&quot;project://database/Assets/Arts/UI/Dialog%20window.v3.png?fileID=21300000&amp;guid=32c05efd2a1dafa498bc6b0cb141154e&amp;type=3#Dialog window.v3&quot;); width: 90%; height: auto; position: absolute; align-self: center; bottom: 20px; max-height: none; min-height: auto; justify-content: flex-start; align-items: center;">
+        <ui:VisualElement style="min-width: auto; min-height: auto; width: 100%; height: auto; flex-wrap: nowrap; padding-top: 31px; padding-right: 30px; padding-bottom: 31px; padding-left: 30px; background-image: url(&quot;project://database/Assets/Arts/UI/Button.v3.png?fileID=21300000&amp;guid=f566eb3afd4391040b64eaf8bd58a8f0&amp;type=3#Button.v3&quot;); max-height: none; display: flex; position: relative; justify-content: flex-start; align-self: flex-start; align-items: stretch;">
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="min-width: auto;">
+                <ui:Label tabindex="-1" text="Hey help me fix all those broken robots" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DialogText" enable-rich-text="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; font-size: 40px; -unity-font-style: bold; white-space: normal; flex-wrap: wrap; visibility: visible; overflow: visible; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="AnswersBox" style="min-width: auto; min-height: auto; height: auto; padding-top: 0; padding-right: 31px; padding-bottom: 31px; padding-left: 31px; width: 100%; max-height: none; display: flex; background-image: none;">
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="AnswersScrollView" style="min-width: auto;">
+                <ui:Button text="Aswer 1" parse-escape-sequences="true" display-tooltip-when-elided="true" class="AnswerText" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;" />
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Arts/UI/Button.v3.png?fileID=21300000&amp;guid=f566eb3afd4391040b64eaf8bd58a8f0&amp;type=3#Button.v3&quot;); position: absolute; width: 25%; height: 50px; left: 65px; top: -25px; padding-top: 2px; padding-right: 4px; padding-bottom: 2px; padding-left: 4px; min-height: auto;">
+            <ui:Label text="Label" name="HeaderText" style="position: relative; width: 100%; display: flex; font-size: 20px; color: rgb(0, 0, 0); -unity-font-style: bold; height: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

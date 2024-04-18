@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2a231d790f6ad46b7596104b626021, type: 3}
+  m_Name: FishRodsSellerManDIalogue
+  m_EditorClassIdentifier: 
+  dialogueSections:
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Hooks and rods for everyone.
+      answers:
+      - answerLabel: Let me see.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Need a new hook or fishing rod?
+      answers:
+      - answerLabel: That's why I am here.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Need some help?
+      answers:
+      - answerLabel: I'm just looking.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: You can watch, but not touch.
+      answers:
+      - answerLabel: I don't know if I can hold myself.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Do you like what you see?
+      answers:
+      - answerLabel: Oh, yes sir.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: May be force be with you.
+      answers:
+      - answerLabel: May be force be with you, master.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: Only good quality stuff.
+      answers:
+      - answerLabel: That what I'm talking about.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - HI
+    endAfterDialogue: 0
+    branchPoint:
+      question: With this equipment, you can catch a kraken.
+      answers:
+      - answerLabel: I will try.
+        gameEvents: []
+        nextDialogueSection: -1

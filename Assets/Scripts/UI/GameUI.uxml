@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="MainMenuUI" src="project://database/Assets/Scripts/UI/MainMenuUI/MainMenuUI.uxml?fileID=9197481963319205126&amp;guid=204793127f7c130468e1f5bd9efbdf6c&amp;type=3#MainMenuUI" />
+    <engine:Template name="NPCDialogue" src="project://database/Assets/Scripts/UI/NPCDialogue.uxml?fileID=9197481963319205126&amp;guid=ffac1f5c18f1528469c8f9f15ab3391c&amp;type=3#NPCDialogue" />
+    <engine:Instance template="MainMenuUI" name="MainMenuUI" style="width: 100%; height: 100%; position: absolute; display: none;" />
+    <engine:Instance template="NPCDialogue" name="NPCDialogue" style="width: 100%; height: 100%; position: absolute; display: none;" />
+    <engine:Button text="To Port" name="ToPortButton" style="position: absolute; width: 200px; height: 100px; top: 50px; left: 50px; display: none; -unity-font-style: bold;" />
+</engine:UXML>

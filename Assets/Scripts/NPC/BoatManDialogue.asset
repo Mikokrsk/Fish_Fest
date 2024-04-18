@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2a231d790f6ad46b7596104b626021, type: 3}
+  m_Name: BoatManDialogue
+  m_EditorClassIdentifier: 
+  dialogueSections:
+  - dialogue:
+    - 'Hi '
+    endAfterDialogue: 0
+    branchPoint:
+      question: Do you want to upgrade your boat?
+      answers:
+      - answerLabel: Yes I want.
+        gameEvents: []
+        nextDialogueSection: 0
+  - dialogue:
+    - 'Hi '
+    endAfterDialogue: 0
+    branchPoint:
+      question: If you want, I can upgrade your boat.
+      answers:
+      - answerLabel: Yes, please.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - ' I used to be a fisherman like you, then shark eat me leg.'
+    endAfterDialogue: 1
+    branchPoint:
+      question: 
+      answers: []
+  - dialogue:
+    - Hi
+    endAfterDialogue: 0
+    branchPoint:
+      question: The best boat upgrade only for you.
+      answers:
+      - answerLabel: Thanks, mate.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - Hi
+    endAfterDialogue: 0
+    branchPoint:
+      question: "Do you need a little upgrade?\r"
+      answers:
+      - answerLabel: 'Only small one. '
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - "Hi\r"
+    endAfterDialogue: 0
+    branchPoint:
+      question: New day, new upgrade.
+      answers:
+      - answerLabel: And new opportunity.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - "Hi\r"
+    endAfterDialogue: 0
+    branchPoint:
+      question: "Good day sir, upgrade?\r"
+      answers:
+      - answerLabel: Upgrade.
+        gameEvents: []
+        nextDialogueSection: -1
+  - dialogue:
+    - "I drink rum so that my hands stop shaking.\r\r"
+    endAfterDialogue: 1
+    branchPoint:
+      question: "\r"
+      answers: []
