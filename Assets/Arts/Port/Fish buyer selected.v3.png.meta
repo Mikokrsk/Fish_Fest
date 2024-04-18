@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fish buyer selected.v3_0: 1515005714937227715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

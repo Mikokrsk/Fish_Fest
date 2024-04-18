@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boat man selected.v3_0: -5814578404914571054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
