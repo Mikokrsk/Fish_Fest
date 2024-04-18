@@ -40,17 +40,16 @@ public class FishSpawnManager : MonoBehaviour
 
         var fishPref = curentFishZone.fishesPrefsList[Random.Range(0, curentFishZone.fishesPrefsList.Count)];
         var fish = fishPref.fishPref.GetComponent<Fish>();
-        fish.fishAsset = RandomisedFishAsset(fishPref.fishAssets);
 
         var positionX = Random.Range(curentFishZone.collider.bounds.min.x, curentFishZone.collider.bounds.max.x);
         var positionY = Random.Range(curentFishZone.collider.bounds.min.y, curentFishZone.collider.bounds.max.y);
         var position = new Vector2(positionX, positionY);
 
         var fishObject = Instantiate(fish, curentFishZone.collider.gameObject.transform);
-        fish.transform.position = position;
-        fish.leftEdge = curentFishZone.collider.bounds.min.x;
-        fish.rightEdge = curentFishZone.collider.bounds.max.x;
-
+        fishObject.transform.position = position;
+        fishObject.leftEdge = curentFishZone.collider.bounds.min.x;
+        fishObject.rightEdge = curentFishZone.collider.bounds.max.x;
+        fishObject.fishAsset = RandomisedFishAsset(fishPref.fishAssets);
         curentFishZone.fishGameObjects.Add(fishObject.gameObject);
     }
 

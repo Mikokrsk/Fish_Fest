@@ -1606,7 +1606,7 @@ MonoBehaviour:
   _spawnZonesList:
   - id: 0
     collider: {fileID: 1380554271}
-    num: 50
+    num: 1
     fishesPrefsList:
     - fishPref: {fileID: 3648119269325092252, guid: cd117dfd98c825a44860f9a590b85541, type: 3}
       fishAssets:

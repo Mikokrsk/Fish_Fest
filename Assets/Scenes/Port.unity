@@ -119,6 +119,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1199559723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1199559724}
+  - component: {fileID: 1199559725}
+  m_Layer: 0
+  m_Name: GameEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1199559724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199559723}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1886053678}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1199559725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199559723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e172a38250f8a2e41ae4101e5a4e01f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEventsList:
+  - gameEvent: {fileID: 11400000, guid: 5f090d74f99f1ba4dab515428c49a4b8, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7352531567609154283}
+          m_TargetAssemblyTypeName: FishByuer, Assembly-CSharp
+          m_MethodName: SellFish
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1886053677
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7071124303394054429}
+  - {fileID: 1199559724}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &140829127632720589
@@ -569,6 +631,7 @@ GameObject:
   - component: {fileID: 7352531567609154282}
   - component: {fileID: 2736213503611818380}
   - component: {fileID: 5534259909896884498}
+  - component: {fileID: 7352531567609154283}
   m_Layer: 0
   m_Name: FishBuyer
   m_TagString: Untagged
@@ -1401,9 +1464,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 2736213503611818380}
-  _dialogueAsset: {fileID: 11400000, guid: 7777fe6957d2d114b88003dcc93228ce, type: 2}
+  _dialogueAsset: {fileID: 11400000, guid: bb9b5f87b8f46a2469249181f5ef85cd, type: 2}
   _dialogueSectionIndex: 0
   _name: FishBuyer
+--- !u!114 &7352531567609154283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529738336622202686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592a09d65fd4a864eafd9d19c45820f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7530750687495458136
 Transform:
   m_ObjectHideFlags: 3
@@ -1638,8 +1713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDialogueTree: {fileID: 0}
-  _printSpeed: 0.2
-  _afterPrintDelay: 2
+  _printSpeed: 0.1
+  _afterPrintDelay: 1
   _answersStyleSheet: {fileID: 7433441132597879392, guid: 396c6d37f88492f489d7caee9d21b4b8, type: 3}
 --- !u!114 &8359817141538141186
 MonoBehaviour:
